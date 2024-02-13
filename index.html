@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- External script dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <!-- Title of the page -->
+    <title>Employee Management System</title>
+</head>
+<body>
+    <div class="navbar"> <!-- Header title -->
+      <p class="title">Employee Management System</p>
+    </div>
+    <header>
+        <!-- Placeholder for potential warning message -->
+        <div class="warning-hidden">
+            <!-- Placeholder for warning message if Employee ID is not available -->
+        </div>
+       
+        <!-- Container for buttons -->
+        <div class="button-container">
+            <!-- Button to add employee -->
+            <button class="btn-primary" id="Add-btn">Add Employee</button>
+            <!-- Button to edit employee -->
+            <button class="btn-primary" id="Edit-btn">Edit Employee</button>
+            <button class="btn-primary" id="viewHide-btn">Hide Details</button>
+
+        </div>
+    </header>
+
+    <!-- Container for employee list -->
+    <div id="employeeList"  >
+        <!-- Title for employee list -->
+        <!-- <p class="title" id="table-heading">Employee List</p> -->
+        <!-- Table to display employee details -->
+        <table id="employeeTable">
+            <thead> 
+                <tr>
+                    <!-- Table headers -->
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Employee ID</th>
+                    <th>Designation</th>
+                </tr>
+            </thead>
+            <!-- Body of the table to be filled dynamically with employee data -->
+            <tbody id="employeeTableBody"></tbody>
+        </table>
+    </div>
+    <!-- Modal wrapper for adding a new employee -->
+    <div class="wrapper hidden">
+        <i class="fa-regular fa-circle-xmark close-icon"></i>
+        <div class="form-wrapper sign-in">
+   
+            <!-- Form for creating a new employee -->
+            <form action="" autocomplete="off">
+               
+                <p>Create Employee</p>
+
+
+
+
+                
+                <!-- Input fields for employee details -->
+                <div class="input-group">
+                    <input type="text" id="name" required>
+                    <label for="name" >Name<span class="required">*</span></label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="address" required>
+                    <label for="address">Address</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" id="employeeId"  required>
+                    <label for="id">Employee Id<span class="required">*</span></label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="designation" required>
+                    <label for="designation">Designation</label>
+                </div>
+                <!-- Button to submit the form and create the employee -->
+                <button class="close-modal" id="create-button">CREATE</button>
+            </form>
+        </div> 
+    </div>
+
+    <!-- Modal wrapper for editing an existing employee -->
+    <div class="wrapper hidden" id="edit-wrapper">
+        <i class="fa-regular fa-circle-xmark edit-icon close-icon"></i>
+        <div class="form-wrapper sign-in">
+            <!-- Form for editing an employee -->
+            <form action="" autocomplete="off">
+                <p>Edit Employee Details</p>
+                <!-- Input field for entering the employee ID to edit -->
+                <div class="input-group">
+                    <input type="number" id="editEmployeeId"  required>
+                    <label for="id">Enter Employee Id whom details to edit</label>
+                </div>
+                <!-- Input fields for updated employee details -->
+                <div class="input-group">
+                    <input type="number" id="newEmployeeId"  required>
+                    <label for="id">Update id</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="editName" required>
+                    <label for="name">Update Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="editAddress" required>
+                    <label for="address">Update Address</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="editDesignation" required>
+                    <label for="designation">Update Designation</label>
+                </div>
+                <!-- Button to submit the form and edit the employee details -->
+                <button class="close-modal" id="edit-button">EDIT</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay for modal dialogs -->
+    <div class="overlay hidden"></div>
+    <!-- JavaScript file for functionality -->
+    <script src="script.js"></script>
+</body>
+</html>
